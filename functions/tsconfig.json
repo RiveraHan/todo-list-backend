@@ -1,0 +1,23 @@
+{
+  "compilerOptions": {
+    "module": "NodeNext",
+    "esModuleInterop": true,
+    "moduleResolution": "nodenext",
+    "noImplicitReturns": true,
+    "experimentalDecorators": true,
+    "noUnusedLocals": true,
+    "outDir": "lib",
+    "rootDir": "src",
+    "sourceMap": true,
+    "strict": true,
+    "target": "es2017",
+    "skipLibCheck": true,
+    "isolatedModules": true,
+    "types": ["node", "jest"]
+  },
+  "exclude": ["node_modules", "lib"],
+  "compileOnSave": true,
+  "include": [
+    "src"
+  ]
+}
