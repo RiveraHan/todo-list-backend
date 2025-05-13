@@ -60,7 +60,7 @@ export class TaskRepositoryFirestore implements TaskRepository {
     await this.collection.doc(task.id).update({
       title: task.title,
       description: task.description,
-      completed: task.status,
+      status: task.status,
       updatedAt,
     });
   }

@@ -1,8 +1,9 @@
 {
   "compilerOptions": {
-    "module": "NodeNext",
+    "target": "es2020",
+    "module": "commonjs",
     "esModuleInterop": true,
-    "moduleResolution": "nodenext",
+    "moduleResolution": "node",
     "noImplicitReturns": true,
     "experimentalDecorators": true,
     "noUnusedLocals": true,
@@ -10,14 +11,11 @@
     "rootDir": "src",
     "sourceMap": true,
     "strict": true,
-    "target": "es2017",
     "skipLibCheck": true,
     "isolatedModules": true,
-    "types": ["node", "express", "jest"],
+    "types": ["node", "express", "jest"]
   },
   "exclude": ["node_modules", "lib"],
   "compileOnSave": true,
-  "include": [
-    "src"
-  ]
+  "include": ["src"]
 }
