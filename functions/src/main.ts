@@ -5,18 +5,18 @@ import express from "express";
 import cors from "cors";
 import {registerRoutes} from "./interfaces/routes";
 import helmet from "helmet";
-import rateLimit from "express-rate-limit";
+import rateLimitLib from "express-rate-limit"; // Renamed the default import
 
 const app = express();
 
-app.use(cors({ origin: true }));
+app.use(cors({origin: true}));
 
 app.use(helmet());
 
 app.use(express.json());
 
 // Enable rate limit
-const limiter = rateLimit({
+const limiter = rateLimitLib({
   windowMs: 60 * 1000,
   max: 100,
   standardHeaders: true,
@@ -25,18 +25,16 @@ const limiter = rateLimit({
     res.status(429).json({
       statusCode: 429,
       body: {
-        error: 'TooManyRequests',
-        errorCode: 'TOO_MANY_REQUESTS',
-        errorMessage: 'Too many requests, please try again later.',
+        error: "TooManyRequests",
+        errorCode: "TOO_MANY_REQUESTS",
+        errorMessage: "Too many requests, please try again later.",
       },
     });
   },
 });
 
 app.use(limiter);
-app
 registerRoutes(app);
 
 export {app};
 export const api = functions.https.onRequest(app);
-
