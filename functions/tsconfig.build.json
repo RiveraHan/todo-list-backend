@@ -1,0 +1,14 @@
+{
+    "extends": "./tsconfig.json",
+    "include": [
+      "src/**/*.ts"
+    ],
+    "exclude": [
+      ".eslintrc.js",
+      ".firebaserc",
+      ".prettierrc",
+      "firebase.json",
+      "jest.config.ts",
+      "jest.setup.ts",
+    ]
+  }
