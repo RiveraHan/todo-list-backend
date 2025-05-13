@@ -13,7 +13,6 @@ export class CreateTask {
   async execute(dto: CreateTaskDto): Promise<Task> {
     const task = await this.taskRepository.create({
       ...dto,
-      status: "todo",
     } as Omit<Task, "id" | "createdAt" | "updatedAt">);
 
     return task;

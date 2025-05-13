@@ -48,7 +48,6 @@ export class TaskRepositoryFirestore implements TaskRepository {
     const updatedAt = new Date();
     const docRef = await this.collection.add({
       ...task,
-      status: "todo",
       createdAt,
       updatedAt,
     });
